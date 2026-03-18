@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Introduction</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eef2f5;
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            height: 120px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            border-bottom: 2px solid #3A6EA5;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            color: #3A6EA5;
+        }
+
+        p,
+        ul {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .lang-selector {
+            margin-top: 20px;
+        }
+
+        .lang-selector button {
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .lang-selector button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .lang-selector button.active {
+            background-color: #3A6EA5;
+            color: white;
+            border-color: #3A6EA5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+            border-top: 1px solid #eef2f5;
+        }
+
+        .footer a {
+            color: #3A6EA5;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .feature-image,
+        .row-image {
+            display: block;
+            margin: 25px auto;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .feature-image:hover,
+        .row-image:hover {
+            transform: scale(1.03);
+        }
+
+        .feature-image {
+            max-width: 500px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 12%;
+        }
+
+        .row-image {
+            width: calc(50% - 10px);
+            max-width: 250px;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                padding: 15px 20px;
+                border-radius: 0;
+            }
+
+            .logo {
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .image-row {
+               // flex-direction: column;
+                align-items: center;
+               justify-content:space-between;
+                gap: 25px;
+                margin: 25px 12%;
+               flex-wrap:wrap;
+            }
+
+            .row-image {
+                width: 40%;
+                max-width: 320px; 
+                min-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1 id="title-es">Introducción del Producto Préstamo Hub 1.0</h1>
+            <h1 id="title-en" style="display: none;">Préstamo Hub Product Introduction 1.0</h1>
+            <div class="lang-selector">
+                <button id="btn-es" onclick="switchLang('es')">Español</button>
+                <button id="btn-en" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <div id="en" class="lang-content" style="display: none;">
+            <p>Préstamo Hub is a professional financial calculation and analysis tool, dedicated to providing accurate
+                data
+                support to help you easily plan personal finances.</p>
+
+            <h2>1. Core Features:</h2>
+            <ul>
+                <li>Professional loan calculation</li>
+                <li>Multi-dimensional loan comparison</li>
+                <li>Smart prepayment analysis</li>
+                <li>Compliant financial product recommendations</li>
+            </ul>
+            <img src="GG5.png" alt="Core Features" class="feature-image">
+
+            <h2>2. Supported Loan Types:</h2>
+            <ul>
+                <li>Housing Mortgage Loan</li>
+                <li>Personal Consumer Loan</li>
+            </ul>
+            <div class="image-row">
+                <img src="GG2.png" alt="Supported Loan Types" class="row-image">
+                <img src="GG1.png" alt="Supported Loan Types" class="row-image">
+            </div>
+
+            <h2>3. Housing & Personal Loan Calculators:</h2>
+            <ul>
+                <li>Supports Equal Installments and Equal Principal calculation methods for housing loans.</li>
+                <li>Uses industry-standard equal principal and interest algorithm for personal loans.</li>
+                <li>Accurately calculates actual costs including service fees to ensure transparency.</li>
+            </ul>
+
+            <h2>4. Compliant Financial Product Recommendations:</h2>
+            <ul>
+                <li>We strictly screen partners to ensure all recommended loan products comply with Mexican national
+                    laws
+                    and regulations and Google Play policies.</li>
+                <li>The platform only displays products from institutions with legal financial licenses. Annual interest
+                    rates, terms, and fees are completely transparent, rejecting any hidden charges.</li>
+                <li>Special Disclaimer: This app only provides information matching and calculation services and does
+                    not
+                    directly issue loans. Specific loan amounts, interest rates, and approval results are independently
+                    decided by cooperative financial institutions based on your credit status.</li>
+            </ul>
+            <div class="image-row">
+                <img src="GG3.png" alt="Housing Loan Calculator" class="row-image">
+                <img src="GG4.png" alt="Personal Loan Calculator" class="row-image">
+            </div>
+            <p><i>Préstamo Hub gives you more confidence in every financial decision with simple, intuitive interaction
+                    design and rigorous data security protection.</i></p>
+        </div>
+
+        <div id="es" class="lang-content" style="display: none;">
+            <p>Préstamo Hub es una herramienta profesional de cálculo y análisis financiero, dedicada a proporcionar un
+                soporte de datos preciso para ayudarle a planificar fácilmente sus finanzas personales.</p>
+
+            <h2>1. Características Principales:</h2>
+            <ul>
+                <li>Cálculo profesional de préstamos</li>
+                <li>Comparación multidimensional de préstamos</li>
+                <li>Análisis inteligente de prepagos</li>
+                <li>Recomendaciones de productos financieros conformes</li>
+            </ul>
+            <img src="GG5.png" alt="Características Principales" class="feature-image">
+
+            <h2>2. Tipos de Préstamos Soportados:</h2>
+            <ul>
+                <li>Préstamo Hipotecario para Vivienda</li>
+                <li>Préstamo de Consumo Personal</li>
+            </ul>
+            <div class="image-row">
+                <img src="GG2.png" alt="Tipos de Préstamos Soportados" class="row-image">
+                <img src="GG1.png" alt="Tipos de Préstamos Soportados" class="row-image">
+            </div>
+
+            <h2>3. Calculadoras de Préstamos Hipotecarios y Personales:</h2>
+            <ul>
+                <li>Admite los métodos de cálculo de Cuotas Iguales y Principal Igual para préstamos hipotecarios.</li>
+                <li>Utiliza el algoritmo estándar de la industria de capital e intereses iguales para préstamos
+                    personales.
+                </li>
+                <li>Calcula con precisión los costos reales, incluidas las tarifas de servicio, para garantizar la
+                    transparencia.</li>
+            </ul>
+
+            <h2>4. Recomendaciones de Productos Financieros Conformes:</h2>
+            <ul>
+                <li>Seleccionamos estrictamente a nuestros socios para garantizar que todos los productos de préstamo
+                    recomendados cumplan con las leyes y regulaciones nacionales de México y las políticas de Google
+                    Play.
+                </li>
+                <li>La plataforma solo muestra productos de instituciones con licencias financieras legales. Las tasas
+                    de
+                    interés anuales, los plazos y las tarifas son completamente transparentes, rechazando cualquier
+                    cargo
+                    oculto.</li>
+                <li>Descargo de responsabilidad especial: esta aplicación solo proporciona servicios de comparación de
+                    información y cálculo y no emite préstamos directamente. Los montos específicos de los préstamos,
+                    las
+                    tasas de interés y los resultados de la aprobación son decididos independientemente por las
+                    instituciones financieras cooperativas en función de su estado crediticio.</li>
+            </ul>
+            <div class="image-row">
+                <img src="GG3.png" alt="Calculadora de Préstamos Hipotecarios" class="row-image">
+                <img src="GG4.png" alt="Calculadora de Préstamos Personales" class="row-image">
+            </div>
+            <p><i>Préstamo Hub le da más confianza en cada decisión financiera con un diseño de interacción simple e
+                    intuitivo y una rigurosa protección de la seguridad de los datos.</i></p>
+        </div>
+
+        <div class="footer">
+            <p id="footer-es">Última Actualización: 6 de enero de 2026 | <a href="privacy.html">Política de
+                    Privacidad</a></p>
+            <p id="footer-en" style="display: none;">Last Updated: January 6, 2026 | <a href="privacy.html">Privacy
+                    Policy</a></p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            // Hide all language-specific elements
+            document.getElementById('en').style.display = 'none';
+            document.getElementById('es').style.display = 'none';
+            document.getElementById('title-en').style.display = 'none';
+            document.getElementById('title-es').style.display = 'none';
+            document.getElementById('footer-en').style.display = 'none';
+            document.getElementById('footer-es').style.display = 'none';
+
+            // Show elements for the selected language
+            document.getElementById(lang).style.display = 'block';
+            document.getElementById('title-' + lang).style.display = 'block';
+            document.getElementById('footer-' + lang).style.display = 'block';
+
+            // Update button text based on selected language
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'es') {
+                btnEs.innerText = 'Español';
+                btnEn.innerText = 'Inglés';
+            } else { // lang === 'en'
+                btnEs.innerText = 'Spanish';
+                btnEn.innerText = 'English';
+            }
+
+            // Update active button state
+            document.getElementById('btn-es').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        // Automatically default to Spanish
+        switchLang('es');
+    </script>
+</body>
+
+</html>
